@@ -39,3 +39,12 @@ body {
   margin-bottom: 10px;
   padding: 0px 10px;
 }
+
+#user_type{
+  outline: none;
+  height: 90px;
+  border: none;
+  background-color: #d0c7c744;
+  margin-bottom: 10px;
+  padding: 0px 10px;
+}

@@ -11,26 +11,32 @@
 
       if(!empty($user_email) && !empty($user_password))
       {
-          $query = "select * from user_info where user_email = '$user_email' and user_password = '$hash_login_password' limit 1";
+              
+          $query = "select * from user_info where user_email = '$user_email' and user_password = '$hash_login_password' and user_active = 1 limit 1";
           $result = mysqli_query($con, $query);
+          
           if($result){
 
-            if(mysqli_num_rows($result) > 0)
+            if(mysqli_num_rows($result) > 0 )
             {
                 $user_data = mysqli_fetch_assoc($result);
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SERVER['user_name'] = $user_data['user_name'];
                 $_SESSION['user_type'] = $user_data['user_type'];
                 header("Location: index.php");
-                // mysqli_close($con);
-            } else {
-                echo "Wrong password!";
-              }
+            } 
+            // elseif()
+            else 
+            {
+                echo "alert('your request still pending');";
+            }
+          }else{
+            echo "wrong password";
           }
-        }
-        else
+      }
+      else
         {
-          echo "please fillup user name and password";
+          echo "please user name and password";
         }
   }
 
