@@ -35,9 +35,14 @@ echo '<link rel="stylesheet" href="profile.css"/>';
          
             <div class="nav_user_info">
                 <ul>
-                    <li><a href="profile.php"><?php echo $_SESSION['user_name']; ?></a></li>
-                    <li><a href="">Login</a></li>
+                    <?php if(isset($_SESSION['user_name'])){ ?>
+                    <li><a href="profile.php"><?php echo "Welcome " .$_SESSION['user_name']; ?></a></li>
+                    <li><a href="Login.php">Logout</a></li>
                 </ul>
+                <?php }else{ ?>
+                    <li><a>Login</a></li>
+                <?php } ?>
+
             </div>
         </div>  
 </form>

@@ -1,9 +1,9 @@
 <?php 
   echo "<link rel='stylesheet' href='./Login.css'>";
   include_once 'DB_Connection.php';
-  include 'l_function.php';
-
-  if($_SERVER['REQUEST_METHOD'] == "POST")
+ 
+  // include 'l_function.php';
+  if(isset($_POST['l-btn']))
   {
     $user_email = $_POST['l-email'];
     $user_password = $_POST['l-password'];
@@ -14,36 +14,26 @@
               
           $query = "select * from user_info where user_email = '$user_email' and user_password = '$hash_login_password' and user_active = 1 limit 1";
           $result = mysqli_query($con, $query);
-          
-          if($result){
-
-            if(mysqli_num_rows($result) > 0 )
-            {
-                $user_data = mysqli_fetch_assoc($result);
-                $_SESSION['user_id'] = $user_data['user_id'];
-                $_SERVER['user_name'] = $user_data['user_name'];
-                $_SESSION['user_type'] = $user_data['user_type'];
-                header("Location: index.php");
-            } 
-            // elseif()
-            else 
-            {
-                echo "alert('your request still pending');";
-            }
+          if(mysqli_num_rows($result)>0)
+          {
+              $user_data=mysqli_fetch_assoc($result);
+              $_SESSION['user_id'] = $user_data['user_id'];
+              $_SESSION['user_name'] = $user_data['user_name'];
+              $_SESSION['user_type'] = $user_data['user_type'];
+              $_SESSION['user_email'] = $user_data['user_email'];
+              header("Location: index.php");
           }else{
-            echo "wrong password";
+            echo '<script type="text/javascript">
+                          alert("The username and password does not match.");
+                  </script>';
           }
+      }else{
+        echo '<script type="text/javascript">
+                          alert("Please Fill The Input Field");
+              </script>';
       }
-      else
-        {
-          echo "please user name and password";
-        }
   }
-
-
-  
 ?>
-
 
 
 

@@ -89,18 +89,8 @@
 
 .user_img > img{
     width: 100%;
-    position: relative;
-    width: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: filter .8s ease;
 }
-#formFileSm:hover{
-    filter: drop-shadow(1px 1px 22px #7584bb);
-}
-/* #formFileSm::-webkit-file-upload-button{
-    visibility: hidden;
-} */
+
 .user_text{
     display: flex;
     flex-direction: column;
@@ -147,42 +137,4 @@
   
     margin-top: 10px;
 }
-
-
-
-
-.ppimg .upload-profile-image{
-    position: relative;
-    width: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: filter .8s ease;
-}
-
-.ppimg .upload-profile-image:hover{
-    filter: drop-shadow(1px 1px 22px #7584bb);
-}
-
-.upload-profile{
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    width: 200px;
-    margin-top: 0px;
-    opacity: 0;
-}
-
-#upload-profile::-webkit-file-upload-button{
-    visibility: hidden;
-}
-
-#upload-profile::before{
-    content: ' ';
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
 
