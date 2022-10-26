@@ -6,7 +6,7 @@
   crossorigin="anonymous"
   />';
 
-  echo '<link rel="stylesheet" href="index.css"/>';
+  echo '<link rel="stylesheet" href="footer.css"/>';
 ?>
  
  <!-- ***************************** Footer Section ********************************* -->

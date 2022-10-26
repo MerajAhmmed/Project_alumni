@@ -1,52 +1,4 @@
-.titleimage {
-    width: 100%;
-    text-align: center;
-  }
-  .titleimage img {
-    width: 70%;
-    margin: 15px 0px;
-  }
-  .navbar a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.894);
-  }
-  .listtext a {
-    text-decoration: none;
-    padding: 14px 16px;
-    color: white;
-    padding: 12px 15px;
-  }
-  #login {
-    display: flex;
-    background-color: #04aa6d;
-    border: 5px;
-    height: 100%;
-  }
-  #login:hover a {
-    background-color: rgb(137, 141, 144);
-    color: #333;
-  }
-  .logo img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
-  
-  .headerpart h1 {
-    text-align: center;
-    line-height: 50%;
-    font-size: 30px;
-    color: #333;
-  }
-  .headerpart p {
-    line-height: 0.01%;
-  
-    color: rgb(118, 111, 111);
-  }
-  
-  .navbar {
-    background-color: #0b1727;
-  }
+
   
   input {
     padding: 4px;
@@ -74,18 +26,6 @@
   .registration-input form div input {
     padding: 5px;
   }
-  
-  .copyright {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5%;
-  }
-  
-  .carousel-item img {
-    width: 100%;
-    height: 500px;
-  }
-  
   .upcom {
     text-align: center;
     padding-bottom: 15px;
@@ -248,14 +188,3 @@
     border-color: #e91e63;
   }
   
-  /* Footer */
-  
-  .footer {
-    /* background-color: #282a35; */
-    background-color: #0b1727;
-    color: #ffffffc5;
-    padding-top: 30px;
-    font-family: "Source Sans Pro", sans-serif;
-  
-    margin-top: 10px;
-  }

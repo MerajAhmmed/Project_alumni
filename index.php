@@ -1,19 +1,17 @@
 <?php 
-// session_start();
-include_once 'DB_Connection.php';
-include "header.php";
-echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-rel="stylesheet"
-integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-crossorigin="anonymous"
-/>';
+      // session_start();
+      include_once 'DB_Connection.php';
+      include "header.php";
+      echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+      />';
 
-echo '<link rel="stylesheet" href="index.css"/>';
+      echo '<link rel="stylesheet" href="index.css"/>';
 
 ?>
     <form action="index.php" method="POST">
-
-
         <div
           id="carouselExampleIndicators"
           class="carousel slide"
@@ -79,20 +77,18 @@ echo '<link rel="stylesheet" href="index.css"/>';
     
         <!-- ************************************** Body Section ******************************************* -->
         
-
-
-
-
+        <?php include "event.php"; ?>
 
         <!-- ************************************** Body Section ******************************************* -->
 
         <!-- ***************************** Footer Section ********************************* -->
        <?php include "footer.php"; ?>
           <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-          crossorigin="anonymous"
-        ></script>
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"
+            >
+          </script>
     </form>
 
 </html>

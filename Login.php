@@ -21,6 +21,7 @@
               $_SESSION['user_name'] = $user_data['user_name'];
               $_SESSION['user_type'] = $user_data['user_type'];
               $_SESSION['user_email'] = $user_data['user_email'];
+              $_SESSION['user_image'] = $user_data['user_image'];
               header("Location: index.php");
           }else{
             echo '<script type="text/javascript">

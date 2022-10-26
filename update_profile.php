@@ -2,32 +2,47 @@
 // session_start();
 include_once 'DB_Connection.php';
 include "header.php";
-echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-rel="stylesheet"
-integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-crossorigin="anonymous"
-/>';
-
 echo '<link rel="stylesheet" href="update_profile.css"/>';
 
 ?>
 
+<?php   
+        $upload_errors = array(
+                UPLOAD_ERR_NO_FILE => "no file",
+                UPLOAD_ERR_OK => "no error"
+        );
+        if(isset($_POST['submit']))
+        {
+             $user_id = $_SESSION['user_id'];
+             $tmp_file = $_FILES['u_file']['tmp_name'];
+             $target_file = basename($_FILES['u_file']['name']);
+             $file_name = $_FILES['u_file']['name'];
+             $upload_dir = "upload";
+             
 
-<section>
-	<div class="wrapper">
-		<div style="text-align: center;">
-			<h1 style="text-align: center; font-size: 35px;font-family: Lucida Console;">Change Your Profile</h1>
-		</div>
-		<div style="padding-left: 30px; ">
-            <form action="" method="post" >
-                <input type="text" name="username" class="form-control" placeholder="Username" required=""><br>
-                <input type="text" name="email" class="form-control" placeholder="Email" required=""><br>
+             $sql = "UPDATE user_info SET user_image='$file_name' WHERE user_id = '$user_id' ";
+             mysqli_query($con,$sql);
+                
 
-                <button class="btn btn-default" type="submit" name="submit" >Update</button>
-            </form>
-        </div>
+             if(move_uploaded_file($tmp_file, $upload_dir."/".$target_file)){
+                $message = "File upload successful";
+             }else{
+                $error = $_FILES['u_file']['error'];
+                $message = $upload_errors[$error];
+             }
+        }
 
-	</div>
         
-</section>
+
+?>
+
+<?php if(!empty($message)) {echo "<p>{$message}</p>";} ?>
+<form action="update_profile.php" enctype="multipart/form-data" method="POST" >
+        <div>             
+                <input type="file" name="u_file">
+                <button class="" type="submit" name="submit">submit</button>
+        </div> 
+</form>
+                        
+
 <?php include 'footer.php'; ?>

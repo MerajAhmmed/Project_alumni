@@ -12,14 +12,15 @@ echo '<link rel="stylesheet" href="profile.css"/>';
 ?>
     
         <!--******************* User profile section ************************-->
-    <form action="" method="POST">
+    <form action="profile.php" method="POST">
         <div class="user_profile">
             <!-- <div class="your_profile">
                 <p>Your Profile</p>
             </div> -->
             <div class="user_img_text">
                 <div class="user_img">
-                    <img src="./image/beard.png" alt="">
+                    
+                    <img src="<?php echo $row['user_image']; ?>" >
                 </div>
                 <div class="user_text">
                     <span class="user_text_name"><?php echo $_SESSION['user_name']; ?></span>
@@ -29,7 +30,9 @@ echo '<link rel="stylesheet" href="profile.css"/>';
 
 
                 <div class="user_edit_profile">
-                    <button>Update Profile</button>
+                    <a href="update_profile.php">
+                      Update Profile
+                    </a>
                 </div>
             </div>
 
